@@ -23,9 +23,16 @@ body {
   line-height: 1.7;
 }
 
-p {
-  margin-bottom: 1.5em;
+html {
+  overflow-y: scroll;
 }
+
+p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+}
+
+
 
 a { color: var(--negro); }
 a:hover { color: var(--acento); }
@@ -35,11 +42,13 @@ header {
   border-bottom: 2px solid var(--negro);
   padding-bottom: 1rem;
   margin-bottom: 2rem;
+  
 }
 
 header h1 {
   font-size: 2rem;
   letter-spacing: 0.05em;
+color: var(--negro);
 }
 
 header h1 a { text-decoration: none; }
@@ -100,6 +109,8 @@ main { min-height: 60vh; }
   margin-left: 0.5rem;
   color: var(--gris);
 }
+
+
 
 /* ── Página: Obras (listado filtrable) ─────────── */
 .filtros {
