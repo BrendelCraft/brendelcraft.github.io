@@ -1,138 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brendelcraft</title>
-  <link rel="stylesheet" href="estilo.css">
+    <meta charset="UTF-8">
+    <title>BrendelCraft</title>
+  <link rel="stylesheet" href="estilobrendel.css">
 </head>
+
 <body>
 
+  
+<header>
+<div id="header-placeholder"></div>
+</header>
+
+    <main>
 
 
-  <!-- ══ CABECERA (aparece en todas las páginas) ══ -->
+<h2> Inicio </h2>
+Bienvenidos a la página web de BrendelCraft. <br>
 
-  <header>
-    <h1><a href="#inicio" onclick="mostrarPagina('inicio')">BrendelCraft</a></h1>
-    <nav>
-      <a href="#inicio"  onclick="mostrarPagina('inicio')"  id="nav-inicio">Inicio</a>
-      <a href="#obras"   onclick="mostrarPagina('obras')"   id="nav-obras">Obras</a>
-      <a href="#sobre-mi" onclick="mostrarPagina('sobre-mi')" id="nav-sobre-mi">Sobre mí</a>
-    </nav>
-  </header>
+He decidido publicar aquí algunas de las cosas que hago, tanto de escritura, música o fotografía. En la sección de obras puedes encontrarlas clasificadas de esta forma. <br><br>
 
 
-  <!-- ══ MAIN ══ -->
-  <main>
+<ul id = "lista_inicio" >
+<li> FICCIÓN: Cuentos cortos, generalmente de fantasía o ciencia ficción. </li> 
+<li> ENSAYO: Aquí trataré asuntos de política o filosofía. </li> 
+<li> MÚSICA: Composiciones de música cortas </li> 
+<li> FOTOGRAFÍA: Comentaré alguna fotografía que me haya inspirado. Fotos de viaje, de la playa, ... </li> 
+</ul>
+<br>
 
 
-    <!-- ── Página: INICIO ── -->
+Sentiros libres de perderos por aquí. Pero dejo a continuación una lista de las obras que más me han gustado o que creo que me representan mejor.
 
-    <section id="pagina-inicio">
-      <div class="inicio-intro">
-        <p>Bienvenidos a la página web de BrendelCraft.</p>
 
-<p> He decidido publicar aquí algunas de las cosas que hago, tanto de escritura, música o fotografía. En  la sección de obras puedes encontrarlas clasificadas de estas forma. </p>
-<p>- FICCIÓN: Cuentos cortos, generalmente de fantasía o ciencia ficción. </p>
-<p>- ENSAYO: Aquí trataré asuntos de política o filosofía.  </p>
-<p>- MÚSICA: Composiciones de música cortas </p>
-<p>- FOTOGRAFÍA: Comentaré alguna fotografía que me haya inspirado. Fotos de viaje, de la playa, ...</p>
-<p>Sentiros libres de perderos por aquí. Pero dejo a continuación una lista de las obras que más me han gustado o que creo que me representan mejor</p>
-      </div>
+ <br><br>
 
-      <div class="obras-recientes">
-        <h2>Favoritos</h2>
+<h2>
+Favoritos
+</h2>
+<div class = "obra_lista" data-cat="Música">
+<a href = "obras/Vuelo en el bosque.html"> <strong> Vuelo en el bosque </strong> </a> 
+<p class = "etiq_cat" > Música </p> 
+<p class = "resumen_obra"> Algo sencillo que compuse hace tiempo sobre el primer vuelo de un pájaro en el bosque. </p>
+<p class = "fecha_obra_lista"> 01/10/2020  </p>
+</div> 
 
-<div class="entrada" data-cat="ficcion">
-  <h3><a href="obras/mira-por-la-ventana.html">Estaba solo mirando por la ventana</a></h3>
-  <div class="entrada-meta">03 noviembre 2025 <span class="etiqueta">ficcion</span></div>
-</div>
-
-<div class="entrada" data-cat="musica">
-  <h3><a href="obras/vuelo-en-el-bosque.html">Vuelo en el bosque</a></h3>
-  <div class="entrada-meta"> 01 octubre 2020 <span class="etiqueta">musica</span></div>
-</div>
-
-      </div>
-    </section>
+<div class = "obra_lista" data-cat="Fotografía">
+<a href = "obras/inhóspito.html"> <strong> Inhóspito </strong> </a> 
+<p class = "etiq_cat" > Fotografía </p> 
+<p class = "resumen_obra"> Aquí no hay ningún lugar para protegerse del miedo... </p>
+<p class = "fecha_obra_lista"> 19/09/2024  </p>
+</div> 
 
 
 
-    <!-- ── Página: OBRAS ── -->
+    </main>
 
-    <section id="pagina-obras" style="display:none">
-      <div class="filtros">
-        <button class="activo" onclick="filtrar('todos', this)">Todos</button>
-        <button onclick="filtrar('ficcion', this)">Ficción</button>
-        <button onclick="filtrar('ensayo', this)">Ensayo</button>
-        <button onclick="filtrar('musica', this)">Música</button>
+<footer>
+<div id="footer-placeholder"></div>
+</footer>
+ 
 
-<!-- QUITO LA SECCIÓN DE PIANO DE MOMENTO
-        <button onclick="filtrar('piano', this)">Piano</button>
--->
-        <button onclick="filtrar('foto', this)">Fotografía</button>
-      </div>
+ <script src="header.js"></script>
 
-
-
-
-<!-- LISTA DE OBRAS. AQUÍ SE AÑADEN LAS OBRAS PARA QUE APAREZCAN EN INDEX
-El atributo data-cat indica la categoría. -->
-      
-
-<div class="entrada" data-cat="musica">
-  <h3><a href="obras/vuelo-en-el-bosque.html">Vuelo en el bosque</a></h3>
-  <div class="entrada-meta"> 01 octubre 2020 <span class="etiqueta">musica</span></div>
-</div>
-
-<div class="entrada" data-cat="ficcion">
-  <h3><a href="obras/mira-por-la-ventana.html">Estaba solo mirando por la ventana</a></h3>
-  <div class="entrada-meta">03 noviembre 2025 <span class="etiqueta">ficcion</span></div>
-</div>
-
-<div class="entrada" data-cat="ficcion">
-  <h3><a href="obras/manzanas-podridas.html">El árbol de las manzanas podridas</a></h3>
-  <div class="entrada-meta"> 21 noviembre 2025 <span class="etiqueta">ficcion</span></div>
-</div>
-
-<div class="entrada" data-cat="ficcion">
-  <h3><a href="obras/ultimos-hijos.html">Los últimos hijos</a></h3>
-  <div class="entrada-meta"> 12 noviembre 2025 <span class="etiqueta">ficcion</span></div>
-</div>
-
-<div class="entrada" data-cat="foto">
-  <h3><a href="obras/inhóspito.html">Inhóspito</a></h3>
-  <div class="entrada-meta"> 19 septiembre 2024 <span class="etiqueta">foto</span></div>
-</div>
-
-    </section>
-
-
-
-    <!-- ── Página: SOBRE MÍ ── -->
-
-    <section id="pagina-sobre-mi" style="display:none">
-      <div class="sobre-mi">
-
-        <p>Soy una persona que vive apaciblemente (o lo intenta) en la costa mediterránea. Me gusta escribir sin pretensiones y compongo música cuando los planetas se alinean para darme el tiempo suficiente para hacerlo. Aun no lo he hecho, pero subiré algún vídeo mio tocando el piano.</p>
-<p> Mi pseudónimo es una mezcla del nombre de dos personajes de fantasía, Grendel, un monstruo devorador de hombres en la historia de Beowulf, y el propio Beowulf, del que sólo tomé la "B". Me pareció que estaba bien juntar en una palabra al bueno y al malo de una película. Con respecto a "craft", interprétalo como "fabricación", por lo que BrendelCraft podría ser algo como "fabricación de neutralidad y concordia"</p>
-      
-        <p>Esta página no tiene sección de comentarios, pero si quieres decirme algo, puedes hacerlo enviándome un correo <a href="mailto:tucorreo@ejemplo.com">mielikuvitusrikas@gmail.com</a>.</p>
-
-      </div>
-    </section>
-
-  </main>
-
-
-
-  <!-- ══ PIE ══ -->
-
-  <footer>
-    <p>Brendelcraft &mdash; <a href="mailto:mielikuvitusrikas@gmail.com">mielikuvitusrikas@gmail.com</a></p>
-  </footer>
-
-  <script src="main.js"></script>
 
 </body>
 </html>
