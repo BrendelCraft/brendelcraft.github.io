@@ -1,0 +1,179 @@
+:root {
+  --negro:       #0d0c10;        /* casi negro, tirando a índigo */
+  --blanco:      #f0ead8;        /* pergamino cálido */
+  --gris:        #7a7060;        /* gris cálido, tirando a tierra */
+  --grisoscuro:  #5a5248;        /* tierra oscura */
+  --grisclaro:   #cec5b0;        /* pergamino medio */
+  --oro:         #b8962e;        /* oro viejo, principal acento místico */
+  --orosuave:    rgba(184,150,46,0.15);
+  --violeta:     #4a3560;        /* violeta profundo, segundo acento */
+  --violetasuave:rgba(74,53,96,0.25);
+  --humo:        rgba(240,234,216,0.04); /* para texturas de capas */
+}
+
+
+/* ========= RESETEA EL ESTILO ================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/*   ===========  GENERAL ============= */
+
+body {
+  font-family: Georgia, serif;
+  background: var(--negro);
+  color: var(--blanco);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  line-height: 1.7;
+
+  /* Textura de fondo: velo de ruido muy sutil  - se genera un corte muy raro abajo cuando la página es corta*/
+/*  background-image:
+    radial-gradient(ellipse at 60% 0%,   rgba(74,53,96,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse at 10% 100%, rgba(184,150,46,0.07) 0%, transparent 60%);*/
+}
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+p {
+  text-align: justify;
+}
+
+a { color: var(--blanco); }
+a:hover { color: var(--oro); }
+
+
+
+nav { margin-top: 0.75rem; }
+nav a {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--grisclaro);
+  transition: color 0.25s;
+}
+nav a:hover {
+  color: var(--oro);
+}
+
+.pie_de_foto {
+  font-style: italic;
+  color: var(--grisoscuro);
+}
+
+
+
+
+/*   ===========  INICIO ============= */
+#lista_inicio  {
+    padding-left: 30px;
+}
+
+
+
+/*   ===========  PÁGINA OBRAS ============= */
+
+.botones_filtro {
+  background-color: transparent;
+  margin: 3px;
+  color: var(--grisclaro);
+  border: 1px solid var(--grisoscuro);
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.botones_filtro:hover {
+  background-color: var(--orosuave);
+  border-color: var(--oro);
+  color: var(--oro);
+}
+
+.botones_filtro:active {
+  background-color: var(--violetasuave);
+}
+
+
+.etiq_cat {
+  display: inline-block;
+  background-color: var(--violetasuave);
+  color: var(--grisclaro);
+  border: 1px solid rgba(74,53,96,0.5);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.fecha_obra {
+  font-style: italic;
+  color: var(--grisoscuro);
+}
+
+.obra_lista {
+  margin: 16px 0;
+  line-height: 1.3;
+  border-top: 1px solid rgba(206,197,176,0.15);
+  padding: 12px 0;
+}
+
+
+ 
+  /* ===========  HEADER AND FOOTER  ============= */
+
+header {
+  border-bottom: 1px solid var(--oro);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+
+  /* Halo dorado muy sutil bajo el header */
+  box-shadow: 0 1px 0 0 rgba(184,150,46,0.2);
+}
+
+/* === TÍTULO BLOG: impactante, místico === */
+.titulo_blog {
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  font-size: clamp(2.6rem, 6vw, 3.8rem);
+  font-weight: normal;
+  letter-spacing: 0.22em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--blanco);
+
+  /* Sombra dorada que evoca luz de vela */
+  text-shadow:
+    0 0 40px rgba(184,150,46,0.25),
+    0 0  8px rgba(184,150,46,0.10),
+    1px 1px 0px rgba(0,0,0,0.4);
+
+  margin-bottom: 0.2em;
+}
+
+@keyframes titulo_aparece {
+  from {
+    opacity: 0;
+    letter-spacing: 0.45em;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.22em;
+  }
+}
+
+footer {
+  margin-top: 1rem; 
+  padding-top: 1rem;
+  border-top: 1px solid var(--oro);
+  box-shadow: 0 -1px 0 0 rgba(184,150,46,0.2);
+  font-size: 0.85rem;
+  color: var(--gris);
+}
+
+footer a { color: var(--gris); }
+footer a:hover { color: var(--oro); }
