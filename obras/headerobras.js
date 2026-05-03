@@ -1,7 +1,7 @@
 //////////////HEADER DE LAS OBRAS/////////////////
 const headerContent = 
 `
- <h1>BrendelCraft</h1>
+ <h1 class = "titulo_blog">BrendelCraft</h1>
 <nav>
 <a href="../index.html">INICIO</a>
 <a href="../obras.html">OBRAS</a>
