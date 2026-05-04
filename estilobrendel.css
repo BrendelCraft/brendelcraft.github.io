@@ -141,7 +141,7 @@ header {
   font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
   font-size: clamp(2.6rem, 6vw, 3.8rem);
   font-weight: normal;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.09em;
   line-height: 1.15;
   text-transform: uppercase;
   color: var(--blanco);
