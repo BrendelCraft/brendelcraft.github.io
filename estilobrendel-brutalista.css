@@ -1,0 +1,213 @@
+:root {
+  --negro:        #0a0a0a;        /* negro puro, fondo de pantalla vieja */
+  --blanco:       #f0f0f0;        /* blanco roto, papel de impresora */
+  --gris:         #999999;        /* gris estándar html */
+  --grisoscuro:   #555555;        /* gris oscuro */
+  --grisclaro:    #cccccc;        /* gris claro */
+  --oro:          #00ff41;        /* verde fósforo PRINCIPAL — Matrix */
+  --orosuave:     rgba(0,255,65,0.12);
+  --violeta:      #ff00ff;        /* magenta fosforescente */
+  --violetasuave: rgba(255,0,255,0.15);
+  --humo:         rgba(0,255,65,0.04);
+}
+
+
+/* ========= RESETEA EL ESTILO ================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/*   ===========  GENERAL ============= */
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: var(--negro);
+  color: var(--blanco);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  line-height: 1.7;
+  font-size: 1rem;
+  border-left: 4px solid var(--oro);
+  border-right: 4px solid var(--oro);
+}
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: auto; /* sin smooth, los 90s eran bruscos */
+  background: #1a001a; /* borde exterior magenta muy oscuro */
+}
+
+p {
+  text-align: left; /* nada de justify — brutalismo crudo */
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #00ffff;          /* cyan neón */
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+a:hover {
+  color: var(--violeta);
+  background-color: #00ffff;
+  text-decoration: none;
+}
+
+
+
+nav {
+  margin-top: 0.75rem;
+  border: 2px solid var(--oro);
+  padding: 6px 10px;
+  background: #001a00;
+}
+nav a {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--oro);
+  font-weight: bold;
+}
+nav a:hover {
+  color: var(--negro);
+  background-color: var(--oro);
+  padding: 2px 4px;
+}
+
+.pie_de_foto {
+  font-style: italic;
+  color: #ffff00;          /* amarillo fosforescente */
+  font-size: 0.88rem;
+  border-left: 3px solid #ffff00;
+  padding-left: 8px;
+}
+
+
+
+
+/*   ===========  INICIO ============= */
+#lista_inicio  {
+    padding-left: 30px;
+    border-left: 2px dashed var(--oro);
+    margin-left: 10px;
+}
+
+
+
+/*   ===========  PÁGINA OBRAS ============= */
+
+.botones_filtro {
+  background-color: var(--negro);
+  margin: 3px;
+  color: var(--oro);
+  border: 2px solid var(--oro);
+  padding: 5px 14px;
+  border-radius: 0;          /* sin redondeo — brutalismo puro */
+  font-size: 0.88rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: none;          /* sin transiciones suaves */
+}
+
+.botones_filtro:hover {
+  background-color: var(--oro);
+  color: var(--negro);
+}
+
+.botones_filtro:active {
+  background-color: var(--violeta);
+  color: var(--negro);
+  border-color: var(--violeta);
+}
+
+
+.etiq_cat {
+  display: inline-block;
+  background-color: var(--violeta);
+  color: var(--negro);
+  border: 2px solid #ff00ff;
+  padding: 3px 10px;
+  border-radius: 0;
+  font-size: 0.82rem;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.fecha_obra {
+  color: #ffff00;
+  font-size: 0.88rem;
+  font-weight: bold;
+}
+
+.obra_lista {
+  margin: 16px 0;
+  line-height: 1.4;
+  border-top: 3px double var(--oro);
+  padding: 12px 0;
+}
+
+
+ 
+  /* ===========  HEADER AND FOOTER  ============= */
+
+header {
+  border: 4px solid var(--oro);
+  border-bottom: 8px solid var(--oro);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background: #001500;
+  outline: 2px solid var(--violeta);
+  outline-offset: 4px;
+}
+
+/* === TÍTULO BLOG === */
+.titulo_blog {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--oro);
+
+  /* Glow de pantalla de fósforo */
+  text-shadow:
+    0 0 8px  rgba(0,255,65,1),
+    0 0 20px rgba(0,255,65,0.8),
+    0 0 40px rgba(0,255,65,0.4),
+    2px 2px 0px var(--violeta);  /* sombra magenta, desplazada */
+
+  margin-bottom: 0.2em;
+}
+
+@keyframes titulo_aparece {
+  from {
+    opacity: 0;
+    letter-spacing: 0.4em;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.05em;
+  }
+}
+
+footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 4px solid var(--oro);
+  border-top: 8px solid var(--oro);
+  background: #001500;
+  font-size: 0.85rem;
+  color: var(--gris);
+  font-family: 'Courier New', Courier, monospace;
+  outline: 2px solid var(--violeta);
+  outline-offset: 4px;
+}
+
+footer a { color: #00ffff; }
+footer a:hover { color: var(--negro); background: #00ffff; }

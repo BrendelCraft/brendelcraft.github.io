@@ -1,37 +1,35 @@
 :root {
-  --negro:        #0e1220;        /* azul noche profundo */
-  --blanco:       #e8edf5;        /* blanco azulado, frío y limpio */
-  --gris:         #7a8899;        /* gris azulado medio */
-  --grisoscuro:   #4a5a6e;        /* azul pizarra oscuro */
-  --grisclaro:    #b8c8d8;        /* azul cielo pálido */
-  --oro:          #e07b3a;        /* naranja atardecer, acento principal */
-  --orosuave:     rgba(224,123,58,0.13);
-  --violeta:      #3a4a7a;        /* azul índigo, segundo acento */
-  --violetasuave: rgba(58,74,122,0.28);
-  --humo:         rgba(180,200,220,0.04);
+  --negro:       #0d0c10;        /* casi negro, tirando a índigo */
+  --blanco:      #f0ead8;        /* pergamino cálido */
+  --gris:        #7a7060;        /* gris cálido, tirando a tierra */
+  --grisoscuro:  #5a5248;        /* tierra oscura */
+  --grisclaro:   #cec5b0;        /* pergamino medio */
+  --oro:         #b8962e;        /* oro viejo, principal acento místico */
+  --orosuave:    rgba(184,150,46,0.15);
+  --violeta:     #4a3560;        /* violeta profundo, segundo acento */
+  --violetasuave:rgba(74,53,96,0.25);
+  --humo:        rgba(240,234,216,0.04); /* para texturas de capas */
 }
 
 
 /* ========= RESETEA EL ESTILO ================= */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-
-
-
-
-
 /*   ===========  GENERAL ============= */
 
 body {
- font-family: 'Georgia', 'Times New Roman', serif;  
- 
+  font-family: georgia, serif;
   background: var(--negro);
   color: var(--blanco);
   max-width: 720px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
-  line-height: 1.8;
-  font-size: 1.05rem;
+  line-height: 1.7;
+
+  /* Textura de fondo: velo de ruido muy sutil  - se genera un corte muy raro abajo cuando la página es corta*/
+/*  background-image:
+    radial-gradient(ellipse at 60% 0%,   rgba(74,53,96,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse at 10% 100%, rgba(184,150,46,0.07) 0%, transparent 60%);*/
 }
 
 html {
@@ -52,12 +50,11 @@ nav { margin-top: 0.75rem; }
 nav a {
   margin-right: 1.5rem;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--grisclaro);
   transition: color 0.25s;
-  font-family: 'Trebuchet MS', 'Gill Sans', sans-serif;
 }
 nav a:hover {
   color: var(--oro);
@@ -66,7 +63,6 @@ nav a:hover {
 .pie_de_foto {
   font-style: italic;
   color: var(--grisoscuro);
-  font-size: 0.9rem;
 }
 
 
@@ -88,8 +84,7 @@ nav a:hover {
   border: 1px solid var(--grisoscuro);
   padding: 6px 16px;
   border-radius: 4px;
-  font-size: 0.88rem;
-  font-family: 'Trebuchet MS', 'Gill Sans', sans-serif;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.25s ease;
 }
@@ -109,25 +104,22 @@ nav a:hover {
   display: inline-block;
   background-color: var(--violetasuave);
   color: var(--grisclaro);
-  border: 1px solid rgba(58,74,122,0.5);
+  border: 1px solid rgba(74,53,96,0.5);
   padding: 4px 12px;
   border-radius: 4px;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  font-family: 'Trebuchet MS', 'Gill Sans', sans-serif;
-  letter-spacing: 0.04em;
 }
 
 .fecha_obra {
   font-style: italic;
   color: var(--grisoscuro);
-  font-size: 0.9rem;
 }
 
 .obra_lista {
   margin: 16px 0;
-  line-height: 1.4;
-  border-top: 1px solid rgba(184,200,216,0.12);
+  line-height: 1.3;
+  border-top: 1px solid rgba(206,197,176,0.15);
   padding: 12px 0;
 }
 
@@ -139,24 +131,29 @@ header {
   border-bottom: 1px solid var(--oro);
   padding-bottom: 1rem;
   margin-bottom: 2rem;
-  box-shadow: 0 1px 0 0 rgba(224,123,58,0.18);
+
+  /* Halo dorado muy sutil bajo el header */
+  box-shadow: 0 1px 0 0 rgba(184,150,46,0.2);
 }
 
-/* === TÍTULO BLOG === */
+/* === TÍTULO BLOG: impactante, místico === */
 .titulo_blog {
-  font-family:  'Trebuchet MS', 'Gill Sans', 'Century Gothic', sans-serif;
-  font-size: clamp(2.2rem, 5.5vw, 3.4rem);
-  font-weight: 300;
-  letter-spacing: 0.22em;
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  font-size: clamp(2.6rem, 6vw, 3.8rem);
+  font-weight: normal;
+  letter-spacing: 0.09em;
   line-height: 1.15;
   text-transform: uppercase;
   color: var(--blanco);
 
-  /* Halo frío del atardecer: naranja cálido sobre fondo azul noche */
-  text-shadow:
-    0 0 55px rgba(224,123,58,0.70),
-    0 0 20px rgba(224,123,58,0.45),
-    0 0  6px rgba(224,123,58,0.25);
+  /* Sombra dorada que evoca luz de vela */
+   text-shadow:
+    0 0 60px rgba(184,150,46,0.85),
+    0 0 25px rgba(184,150,46,0.60),
+    0 0  8px rgba(184,150,46,0.40),
+    1px 1px 0px rgba(0,0,0,0.4);
+
+
 
   margin-bottom: 0.2em;
 }
@@ -164,7 +161,7 @@ header {
 @keyframes titulo_aparece {
   from {
     opacity: 0;
-    letter-spacing: 0.55em;
+    letter-spacing: 0.45em;
   }
   to {
     opacity: 1;
@@ -176,10 +173,9 @@ footer {
   margin-top: 1rem; 
   padding-top: 1rem;
   border-top: 1px solid var(--oro);
-  box-shadow: 0 -1px 0 0 rgba(224,123,58,0.18);
+  box-shadow: 0 -1px 0 0 rgba(184,150,46,0.2);
   font-size: 0.85rem;
   color: var(--gris);
-  font-family: 'Trebuchet MS', 'Gill Sans', sans-serif;
 }
 
 footer a { color: var(--gris); }
